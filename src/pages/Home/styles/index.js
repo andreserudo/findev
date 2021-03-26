@@ -20,8 +20,16 @@ const UpWrap = styled.div`
     
 `;
 
-const DownWrap = styled.div`
-  background-color: ${(props) => props.theme.secondary.background};
+const DownWrap = styled.main`
+  background-color: ${(props) => props.theme.secondary.background};  
+`;
+
+DownWrap.Form = styled.section`
+  background-color: ${(props) => props.theme.primary.background};
+`;
+
+DownWrap.Results = styled.section`
+  background-color: ${(props) => props.theme.secondary.background};  
 `;
 
 export { HomeWrap, UpWrap, DownWrap };

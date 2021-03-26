@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+// import PropTypes from 'prop-types';
 import SelectWrap from './styles';
 
 function SelectPeriod() {
-  const [period, setPeriod] = useState({ initial: '', final: '' });
+  const [period, setPeriod] = useState({
+    initial: '',
+    final: '',
+  });
   const [isIntervalOn, setIntervalOn] = useState(true);
 
   const handleInputChange = ({ target }) => {
@@ -50,5 +54,12 @@ function SelectPeriod() {
     </SelectWrap>
   );
 }
+
+// SelectPeriod.propTypes = {
+//   data: PropTypes.shape({
+//     initialYear: PropTypes.string,
+//     finalYear: PropTypes.string,
+//   }).isRequired,
+// };
 
 export default SelectPeriod;
