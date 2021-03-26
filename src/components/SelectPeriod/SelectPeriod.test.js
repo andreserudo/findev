@@ -8,13 +8,15 @@ import SelectPeriod from './SelectPeriod';
 
 describe('o <SelectPeriod /> deve', () => {
   it('ter dois labels, dois inputs e um select', () => {
-    const { getByLabelText, getAllByRole, getByRole } = render(
+    const {
+      getAllByRole, getByRole, getByText,
+    } = render(
       <ThemeProvider theme={theme}>
         <SelectPeriod />
       </ThemeProvider>,
     );
-    const label = getByLabelText('Anos de Experiência:');
-    const labelE = getByLabelText('e');
+    const label = getByText('Anos de Experiência:');
+    const labelE = getByText('e');
     const inputs = getAllByRole('textbox');
     const select = getByRole('combobox');
 
@@ -52,8 +54,9 @@ describe('o <SelectPeriod /> deve', () => {
     const inputs = getAllByRole('textbox');
 
     expect(inputs.length).toBe(1);
-    userEvent.selectOptions(select, [options[0].textContent]);
-    expect(inputs.length).toBe(2);
+    userEvent.selectOptions(select, [options[1].textContent]);
+    const newInputs = getAllByRole('textbox');
+    expect(newInputs.length).toBe(2);
   });
 
   it('deve aceitar somente números para filtro por intervalo', () => {
