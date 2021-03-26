@@ -4,7 +4,8 @@ import HeaderWrapper from './styles';
 function Header() {
   return (
     <HeaderWrapper>
-      <h1>FinDev</h1>
+      <h1>Findev</h1>
+      <h2>Encontre quem está lhe procurando.</h2>
     </HeaderWrapper>
   );
 }
