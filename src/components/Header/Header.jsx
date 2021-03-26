@@ -3,7 +3,10 @@ import HeaderWrapper from './styles';
 
 function Header() {
   return (
-    <HeaderWrapper />
+    <HeaderWrapper>
+      <h1>Findev</h1>
+      <h2>Encontre quem está lhe procurando.</h2>
+    </HeaderWrapper>
   );
 }
 

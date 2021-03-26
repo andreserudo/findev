@@ -1,9 +1,13 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home/Home';
+import { theme } from './themes';
 
 function App() {
   return (
-    <Home />
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
 
