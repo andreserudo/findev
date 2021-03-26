@@ -34,6 +34,7 @@ function SelectPeriod() {
         name="initial"
         value={period.initial}
         onChange={(event) => handleInputChange(event)}
+        maxLength="2"
       />
       {isIntervalOn && <span>e</span>}
       {isIntervalOn
@@ -43,6 +44,7 @@ function SelectPeriod() {
           name="final"
           value={period.final}
           onChange={(event) => handleInputChange(event)}
+          maxLength="2"
         />
         )}
     </SelectWrap>
