@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SelectPeriod from '../SelectPeriod/SelectPeriod';
+import FormWrapper from './styles';
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -27,21 +28,23 @@ function Form() {
     };
   };
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
-      <label>
-        Localidade:
-        <input type="text" name="localidade" value={formData.localidade} onChange={(event) => handleInputChange(event)} />
-      </label>
+    <FormWrapper>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <label>
+          Localidade:
+          <input type="text" name="localidade" value={formData.localidade} onChange={(event) => handleInputChange(event)} />
+        </label>
 
-      <label>
-        Stack:
-        <input type="text" name="stack" value={formData.stack} onChange={(event) => handleInputChange(event)} />
-      </label>
+        <label>
+          Stack:
+          <input type="text" name="stack" value={formData.stack} onChange={(event) => handleInputChange(event)} />
+        </label>
 
-      <SelectPeriod />
+        <SelectPeriod />
 
-      <button type="submit">Encontrar</button>
-    </form>
+        <button type="submit">Encontrar</button>
+      </form>
+    </FormWrapper>
   );
 }
 

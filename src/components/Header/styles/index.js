@@ -4,7 +4,6 @@ import breakpointsMedia from '../../../themes/utils/breakpointsMedia';
 const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
-  width: 600px;
 
   h1 {
     color: ${(props) => props.theme.primary.color};    
@@ -16,10 +15,11 @@ const HeaderWrapper = styled.header`
           font-size: 48px;
         `,
     md: css`
-          font-size: 52px;
+          font-size: 82px;
+          width: 600px;
         `,
     lg: css`
-          font-size: 62px;
+          font-size: 92px;
         `,
   })}
   }

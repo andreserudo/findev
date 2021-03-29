@@ -28,29 +28,31 @@ function SelectPeriod() {
   return (
     <SelectWrap>
       <span htmlFor="initial">Anos de Experiência:</span>
-      <select defaultValue="entre" onChange={(event) => handleSelectChange(event)}>
-        <option value="até">até</option>
-        <option value="entre">entre</option>
-        <option value="acima de">acima de</option>
-      </select>
-      <input
-        type="text"
-        name="initial"
-        value={period.initial}
-        onChange={(event) => handleInputChange(event)}
-        maxLength="2"
-      />
-      {isIntervalOn && <span>e</span>}
-      {isIntervalOn
-        && (
+      <SelectWrap.Group>
+        <select defaultValue="entre" onChange={(event) => handleSelectChange(event)}>
+          <option value="até">até</option>
+          <option value="entre">entre</option>
+          <option value="acima de">acima de</option>
+        </select>
         <input
           type="text"
-          name="final"
-          value={period.final}
+          name="initial"
+          value={period.initial}
           onChange={(event) => handleInputChange(event)}
           maxLength="2"
         />
+        {isIntervalOn && <span>e</span>}
+        {isIntervalOn
+        && (
+          <input
+            type="text"
+            name="final"
+            value={period.final}
+            onChange={(event) => handleInputChange(event)}
+            maxLength="2"
+          />
         )}
+      </SelectWrap.Group>
     </SelectWrap>
   );
 }
