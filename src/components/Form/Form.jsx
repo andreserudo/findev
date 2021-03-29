@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import APIContext from '../../context/APIContext';
 import SelectPeriod from '../SelectPeriod/SelectPeriod';
 import FormWrapper from './styles';
 
@@ -9,6 +10,7 @@ function Form() {
     initialYear: '',
     finalYear: '',
   });
+  const { handleRequest } = useContext(APIContext);
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target;
@@ -23,9 +25,10 @@ function Form() {
     const dataToFind = {
       localidade,
       stack,
-      initialYear: e.target[2].value,
-      finalYear: e.target[3].value,
+      initialYear: e.target[3].value,
+      finalYear: e.target[4].value,
     };
+    handleRequest(dataToFind);
   };
   return (
     <FormWrapper>
