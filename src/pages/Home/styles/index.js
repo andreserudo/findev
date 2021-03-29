@@ -7,7 +7,7 @@ const HomeWrap = styled.div`
 
 const UpWrap = styled.div`  
   background-color: ${(props) => props.theme.primary.background};
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
   ${breakpointsMedia({
@@ -20,8 +20,22 @@ const UpWrap = styled.div`
     
 `;
 
-const DownWrap = styled.div`
-  background-color: ${(props) => props.theme.secondary.background};
+const DownWrap = styled.main`  
+  background-color: ${(props) => props.theme.secondary.background};  
+
+`;
+
+DownWrap.Form = styled.section`
+  padding: 0 2rem;
+  background-color: ${(props) => props.theme.primary.background};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+DownWrap.Results = styled.section`
+  background-color: ${(props) => props.theme.secondary.background};  
 `;
 
 export { HomeWrap, UpWrap, DownWrap };
