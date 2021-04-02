@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import APIContext from './APIContext';
 import states from '../services/states';
@@ -6,22 +6,27 @@ import { getAllCandidates } from '../services';
 
 function Provider({ children }) {
   const [stateAPI, setStateAPI] = useState(states.DEFAULT);
+  const [candidates, setCandidates] = useState([]);
 
-  const handleChangeState = (state) => {
-    setStateAPI(state);
+  const handleStateChange = async (state) => {
+    await setStateAPI(state);
   };
 
-  const handleRequest = (formData) => {
+  const handleRequest = async (formData) => {
     setStateAPI(states.LOADING);
-    const response = getAllCandidates();
-    console.log(response);
-    console.log(formData);
+    // await handleStateChange(states.LOADING);
+    const response = await getAllCandidates(formData);
+
+    setCandidates(response.data);
+    // await handleStateChange(response.status);
+    setStateAPI(response.status);
   };
 
   const context = {
     stateAPI,
-    handleChangeState,
+    candidates,
     handleRequest,
+    handleStateChange,
   };
 
   return (

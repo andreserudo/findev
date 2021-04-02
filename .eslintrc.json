@@ -27,6 +27,7 @@
                 "extensions": [ ".js", ".jsx"]
             }
         ],
-        "jsx-a11y/label-has-associated-control": "off"
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-unused-vars": "off"
     }
 }
