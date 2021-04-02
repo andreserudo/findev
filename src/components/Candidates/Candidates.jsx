@@ -5,6 +5,12 @@ import Box from './styles';
 import Candidate from '../Candidate/Candidate';
 
 function Candidates({ candidates }) {
+  if (candidates.length === 0) {
+    return (
+      <h3>Não foram encontrados resultados para a sua busca.</h3>
+    );
+  }
+
   return (
     <AnimateSharedLayout>
       <h3>Candidatos</h3>
@@ -14,6 +20,7 @@ function Candidates({ candidates }) {
     </AnimateSharedLayout>
   );
 }
+
 Candidates.propTypes = {
   candidates: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };

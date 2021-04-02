@@ -220,13 +220,15 @@ const samples = [
   },
 ];
 
-const getAllCandidates = async (formData) => {
-  const url = `${baseUrl}/match/1`;
+const getAllCandidates = async ({
+  page, city, stack, initialYear, finalYear, type,
+}) => {
+  // http://localhost:3002/candidates/match/?page=1&city=Recife&stack&initialYear&finalYear&type=entre
+  const url = `${baseUrl}/match/?page=${page}&city=${city}&stack=${stack}&initialYear=${initialYear}&finalYear=${finalYear}&type=${type}`;
   let request;
   try {
     request = await fetch(url, {
       method: 'GET',
-      body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
@@ -240,7 +242,7 @@ const getAllCandidates = async (formData) => {
     };
   } catch (error) {
     return {
-      status: states.SUCCESS,
+      status: states.ERROR,
       data: samples,
     };
   }
