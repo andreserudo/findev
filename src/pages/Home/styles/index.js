@@ -8,10 +8,16 @@ const HomeWrap = styled.div`
 const UpWrap = styled.div`  
   background-color: ${(props) => props.theme.primary.background};
   padding-top: 4rem;
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-right: 2rem;
   ${breakpointsMedia({
-    md: css`
+    xs: css`
+      padding-left: 2rem;
+    `,
+    sm: css`
+      padding-left: 2rem;
+    `,
+    md: css`      
       display: flex;
       flex-direction: column;
       align-items: center;  
@@ -36,6 +42,12 @@ DownWrap.Form = styled.section`
 
 DownWrap.Results = styled.section`
   background-color: ${(props) => props.theme.secondary.background};  
+  color: ${(props) => props.theme.secondary.color};  
+  padding: 2rem 2rem;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export { HomeWrap, UpWrap, DownWrap };
