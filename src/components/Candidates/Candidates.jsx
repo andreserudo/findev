@@ -13,7 +13,7 @@ function Candidates({ candidates }) {
 
   return (
     <AnimateSharedLayout>
-      <h3>Candidatos</h3>
+      <h3>Resultados</h3>
       <Box layout>
         {candidates.map((item) => (<Candidate key={item.id} item={item} />))}
       </Box>
