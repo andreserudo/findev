@@ -3,8 +3,8 @@ import APIContext from '../context/APIContext';
 import dataResponse from './mockAPI';
 import states from './states';
 
-// const baseUrl = 'https://findev-backend-serudo.herokuapp.com/candidates';
-const baseUrl = 'http://localhost:3002/candidates/';
+const baseUrl = 'https://findev-backend-serudo.herokuapp.com/candidates';
+// const baseUrl = 'http://localhost:3002/candidates/';
 
 const samples = [
   {
