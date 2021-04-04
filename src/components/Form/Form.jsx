@@ -24,11 +24,13 @@ function Form() {
     const { localidade, stack } = formData;
 
     const dataToFind = {
-      localidade,
+      city: localidade,
       stack,
       initialYear: e.target[3].value,
       finalYear: e.target[4].value,
+      type: e.target[2].value,
     };
+
     await handleRequest(dataToFind);
   };
   return (
