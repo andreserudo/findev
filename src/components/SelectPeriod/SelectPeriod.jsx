@@ -35,7 +35,7 @@ function SelectPeriod() {
           <option value="acima de">acima de</option>
         </select>
         <input
-          type="text"
+          type="number"
           name="initial"
           value={period.initial}
           onChange={(event) => handleInputChange(event)}
@@ -45,7 +45,7 @@ function SelectPeriod() {
         {isIntervalOn
         && (
           <input
-            type="text"
+            type="number"
             name="final"
             value={period.final}
             onChange={(event) => handleInputChange(event)}

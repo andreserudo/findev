@@ -18,8 +18,7 @@ const FormWrapper = styled.div`
       flex-direction: column;
       color: ${(props) => props.theme.primary.color};
       font-weight: bold;
-      margin-bottom: 1rem;
-
+      margin-bottom: 1rem;      
       ${breakpointsMedia({
     xs: css`          
             width: 100%;      
@@ -32,6 +31,8 @@ const FormWrapper = styled.div`
         height: 32px;      
         border: none;  
         border-radius: 3px;
+        padding-left: .25rem;
+        margin-top: .25rem;
         ${breakpointsMedia({
     xs: css`          
             width: 100%;      
@@ -70,6 +71,10 @@ const FormWrapper = styled.div`
       opacity: 0.9;
       transition: opacity 1s;
     }    
+
+    button:focus{
+      outline: none;
+    }
 
   }
 `;

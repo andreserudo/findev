@@ -9,6 +9,7 @@ const SelectWrap = styled.div`
   span {
     color: ${(props) => props.theme.primary.color};    
     font-weight: bold;    
+    margin-bottom: .25rem;
   }  
 `;
 
@@ -29,7 +30,7 @@ SelectWrap.Group = styled.div`
     color: ${(props) => props.theme.secondary.color};    
     font-weight: bold;    
     border: none;  
-    border-radius: 3px;
+    border-radius: 3px;    
   }
 
   input {
@@ -38,6 +39,7 @@ SelectWrap.Group = styled.div`
     margin-left: .5rem;
     border: none;  
     border-radius: 3px;
+    text-align: right;
   }
 
 `;
